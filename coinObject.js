@@ -35,27 +35,20 @@ const coin = {
   }
 };
 function display20Flips() {
-  let makeDiv = document.createElement("div");
   let storeFlipNumber;
   const results = [];
   for(let i = 0; i < 20; i++){
-   storeFlipNumber = coin.flip()
-   let text = results.push(storeFlipNumber);
-   outputFlips = document.createTextNode(text)
-   makeDiv.appendChild(outputFlips);
+    storeFlipNumber = coin.flip()
+    results.push(storeFlipNumber);
   }
   return results.toString();
-
   // 4. One point: Use a loop to flip the coin 20 times, each time displaying the result of the flip as a string on the page.  After your loop completes, return an array with the result of each flip.
 }
 function display20Images() {
-  let makeDiv = document.createElement("div");
   const results = [];
   for(let i = 0; i < 20; i++){
     storeImageFlip = coin.toHTML();
-    let outputImages = results.push(storeImageFlip);
-    makeDiv.appendChild(outputImages);
-    
+    results.push(storeImageFlip);
   }
   return results;
   // 5. One point: Use a loop to flip the coin 20 times, and display the results of each flip as an image on the page.  After your loop completes, return an array with result of each flip.
@@ -63,11 +56,11 @@ function display20Images() {
 
 console.log(coin.flip());
 console.log(coin.toString());
-// coin.toHTML();
+coin.toHTML();
 console.log(display20Flips());
 console.log(display20Images());
 
-display20Flips();
+
 
 
 
