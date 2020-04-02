@@ -6,22 +6,30 @@ const coin = {
       //    0 or 1: use "this.state" to access the "state" property on this object.
   },
   toString: function() {
-      let coinFace;
-
       if(this.state === 0){
-        return coinFace = "Heads"
+        return this.state = "Heads"
       }else if(this.state === 1){
-        return coinFace = "Tails"
+        return this.state = "Tails"
       }
-      coinFace.toString();
+      this.state.toString();
       // 2. One point: Return the string "Heads" or "Tails", depending on whether
       //    "this.state" is 0 or 1.
   },
   toHTML: function() {
-      const image = document.createElement('img');
+      const imageHeads = document.createElement('img');
+      const imageTails = document.createElement('img');
+
+      if(this.state === "Heads"){
+        imageHeads.src="images/quarter-heads.png";
+        document.body.appendChild(imageHeads);
+        return imageHeads;
+      }else if(this.state === "Tails"){
+        imageTails.src="images/quarter-tails.png";
+        document.body.appendChild(imageTails);
+        return imageTails;
+      }
       // 3. One point: Set the properties of this image element to show either face-up
       //    or face-down, depending on whether this.state is 0 or 1.
-      return image;
   }
 };
 function display20Flips() {
@@ -35,5 +43,5 @@ function display20Images() {
 
 console.log(coin.flip());
 console.log(coin.toString());
-
+coin.toHTML();
 
