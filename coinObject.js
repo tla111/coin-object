@@ -1,5 +1,6 @@
 let outputImage = document.querySelector("#coinFlipImage");
-let holding20FlipsCounts = document.querySelector("#flipped20Times");
+let holdCoinCounts = document.querySelector("#flipCoin20Times");
+let holdImageCounts = document.querySelector("#flipImage20Times");
 
 const coin = {
   state: 0,
@@ -44,9 +45,9 @@ function display20Flips() {
   for(let i = 0; i < 20; i++){
     storeFlipNumber = coin.flip()
     results.push(storeFlipNumber);
-    // holding20FlipsCounts.appendChild(results);
   }
   return results.toString();
+  
   // 4. One point: Use a loop to flip the coin 20 times, each time displaying the result of the flip as a string on the page.  After your loop completes, return an array with the result of each flip.
 }
 function display20Images() {
@@ -66,6 +67,7 @@ console.log(display20Flips());
 console.log(display20Images());
 
 display20Flips();
+display20Images();
 
 
 
