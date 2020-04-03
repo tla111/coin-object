@@ -1,4 +1,5 @@
 let outputImage = document.querySelector("#coinFlipImage");
+let showHeadsOrTails = document.querySelector("#flipStatements")
 
 const coin = {
   state: 0,
@@ -13,9 +14,12 @@ const coin = {
       }else if(this.state === 1){
         return this.state = "Tails"
       }
-      this.state.toString();
+      let text = this.state.toString() + ", ";
+      let output = document.createTextNode(text);
+      showHeadsOrTails.appendChild(output);
       // 2. One point: Return the string "Heads" or "Tails", depending on whether
       //    "this.state" is 0 or 1.
+
   },
   toHTML: function() {
       const imageHeads = document.createElement('img');
@@ -40,11 +44,11 @@ const coin = {
 function display20Flips() {
   const results = [];
   for(let i = 0; i < 20; i++){
-    coin.flip();
-    results.push(coin.toString());
+   coin.flip()
+   coin.toString();
+   results.push(coin.toString());
   }
   return results;
-  
   // 4. One point: Use a loop to flip the coin 20 times, each time displaying the result of the flip as a string on the page.  After your loop completes, return an array with the result of each flip.
 }
 function display20Images() {
@@ -53,11 +57,12 @@ function display20Images() {
     coin.flip()
     coin.toString()
     coin.toHTML()
+    results.push(coin.toString());
   }
+  return results;
   // 5. One point: Use a loop to flip the coin 20 times, and display the results of each flip as an image on the page.  After your loop completes, return an array with result of each flip.
 }
 
-console.log(display20Flips());
 display20Flips();
 display20Images();
 
