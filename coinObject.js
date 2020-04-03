@@ -1,12 +1,14 @@
+//Grab the html elements with the appropriate ids
 let outputImage = document.querySelector("#coinFlipImage");
 let showHeadsOrTails = document.querySelector("#flipStatements")
-
+//Create an object named coin
 const coin = {
+  //Assign a property named state with a value of 0
   state: 0,
   flip: function() {
       return this.state = Math.floor(Math.random() * 2 + 0);
-      // 1. One point: Randomly set your coin object's "state" property to be either 
-      //    0 or 1: use "this.state" to access the "state" property on this object.
+      /* One point: Randomly set your coin object's "state" property to be either 
+       0 or 1: use "this.state" to access the "state" property on this object. */
   },
   toString: function() {
       if(this.state === 0){
@@ -15,10 +17,10 @@ const coin = {
         return this.state = "Tails"
       }
       let text = this.state.toString() + ", ";
-      let output = document.createTextNode(text);
+      let output = document.createTextNode(text); //Think of text wrapped in a ball getting ready to get appended onto the DOM
       showHeadsOrTails.appendChild(output);
-      // 2. One point: Return the string "Heads" or "Tails", depending on whether
-      //    "this.state" is 0 or 1.
+      /* One point: Return the string "Heads" or "Tails", depending on whether
+        "this.state" is 0 or 1. */
 
   },
   toHTML: function() {
@@ -36,8 +38,8 @@ const coin = {
         outputImage.appendChild(imageTails);
         return imageTails;
       }
-      // 3. One point: Set the properties of this image element to show either face-up
-      //    or face-down, depending on whether this.state is 0 or 1.
+      /* One point: Set the properties of this image element to show either face-up
+          or face-down, depending on whether this.state is 0 or 1. */
   }
 };
 
@@ -49,7 +51,8 @@ function display20Flips() {
    results.push(coin.toString());
   }
   return results;
-  // 4. One point: Use a loop to flip the coin 20 times, each time displaying the result of the flip as a string on the page.  After your loop completes, return an array with the result of each flip.
+  /* Use a loop to flip the coin 20 times, each time displaying the result of the flip as a string on the page.  
+    After your loop completes, return an array with the result of each flip. */
 }
 function display20Images() {
   const results = [];
@@ -60,7 +63,8 @@ function display20Images() {
     results.push(coin.toString());
   }
   return results;
-  // 5. One point: Use a loop to flip the coin 20 times, and display the results of each flip as an image on the page.  After your loop completes, return an array with result of each flip.
+  /* Use a loop to flip the coin 20 times, and display the results of each flip as an image on the page.  
+    After your loop completes, return an array with result of each flip. */
 }
 
 display20Flips();
